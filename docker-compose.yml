@@ -1,0 +1,8 @@
+version: '3.5'
+services:
+  cronsync:
+    image: mattbanner/cronsync:latest
+    volumes:
+      - "/mnt/data01:/mnt/data01"
+      - "/mnt/data02:/mnt/data02"
+      - "/docker/cronsync:/etc/cron.d"
