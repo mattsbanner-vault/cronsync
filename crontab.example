@@ -1,0 +1,7 @@
+# Crontab
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user  command
+* * * * *   root    rsync /root/1 /root/2

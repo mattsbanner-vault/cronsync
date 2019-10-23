@@ -5,4 +5,4 @@ services:
     volumes:
       - "/mnt/data01:/mnt/data01"
       - "/mnt/data02:/mnt/data02"
-      - "/docker/cronsync:/etc/cron.d"
+      - "/docker/cronsync/crontab:/etc/crontab"
