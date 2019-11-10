@@ -1,8 +1,16 @@
 FROM ubuntu:bionic
+LABEL maintainer = "Matt Banner <matt@banner.wtf>"
+ENV DEBIAN_FRONTEND="noninteractive"
 
-RUN apt update && apt upgrade -yq && \
-apt install -y systemd rsync openssh-client nano cron
+RUN apt-get update && apt-get install -y \
+    systemd rsync openssh-client cron && \
+    mkdir /resource && \
+    rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/etc/cron.d"]
+ADD run.sh /root/run.sh
 
-CMD tail -f /dev/null
+RUN chmod 755 /root/run.sh
+
+VOLUME ["/resource"]
+
+CMD ["/root/run.sh"]

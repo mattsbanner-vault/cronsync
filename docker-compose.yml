@@ -3,6 +3,6 @@ services:
   cronsync:
     image: mattbanner/cronsync:latest
     volumes:
-      - "/mnt/data01:/mnt/data01"
-      - "/mnt/data02:/mnt/data02"
-      - "/docker/cronsync:/etc/cron.d"
+      - "/mnt/data01:/mnt/data01" # Drive you will use
+      - "/mnt/data02:/mnt/data02" # Drive you will use
+      - "/docker/cronsync/resource/:/resource/"
